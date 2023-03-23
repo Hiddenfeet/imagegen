@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./Header.css";
-
+import ACHIEVEMORLOGO from "../assets/ACHIEVEMORLOGO.jpeg";
 export const Header = () => {
   const [open, setopen] = useState(false);
   console.log(open);
@@ -10,10 +10,8 @@ export const Header = () => {
       <div className="headermain">
         <div className="header">
           <div className="left">
-            <img
-              src="https://nftify-platform.s3.ap-southeast-1.amazonaws.com/logo/62d170f22994a0bed7213b80-1658926016888.png"
-              alt=""
-            />
+            {/* src="https://nftify-platform.s3.ap-southeast-1.amazonaws.com/logo/62d170f22994a0bed7213b80-1658926016888.png" */}
+            <img src={ACHIEVEMORLOGO} alt="" />
             <form
               classname="example"
               action="/action_page.php"

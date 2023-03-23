@@ -230,4 +230,18 @@ font-family: "Patrick Hand";
 .ig{
   margin-top: 12rem;
 }
+a{
+  color: white;
+}
 
+.info{
+  color: white;
+    padding-bottom: 21px;
+    margin-top: -15px;
+    font-size: 10px;
+    font-family: auto;
+}
+
+.loading{
+  color: white;
+}

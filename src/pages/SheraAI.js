@@ -16,6 +16,8 @@ import messageIcon from "../assets/message-icon.png";
 
 import plus from "../assets/plus.png";
 
+import ACHIEVEMORLOGO from "../assets/ACHIEVEMORChat.jpeg";
+
 import { ConnectWallet, useAddress } from "@thirdweb-dev/react";
 
 // Import the Firebase SDK
@@ -24,7 +26,7 @@ import "firebase/compat/auth";
 import "firebase/compat/firestore";
 import "firebase/compat/database";
 
-const API_KEY = "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";
+const API_KEY = "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";
 // "Explain things like you would to a 10 year old learning how to code."
 const systemMessage = {
   //  Explain things like you're talking to a software professional with 5 years of experience.
@@ -40,7 +42,7 @@ function SheraAI() {
 
   const [messages, setMessages] = useState([
     {
-      message: "Hello, I'm Shera AI Bot! Ask me anything!",
+      message: "Hello, I'm Achievemor Bot! Ask me anything!",
       sentTime: "just now",
       sender: "ChatGPT",
       avatar: "https://avatars.dicebear.com/api/avataaars/chatgpt.svg",
@@ -71,7 +73,7 @@ function SheraAI() {
         }
       });
     setOpenMenu(false);
-    // window.location.reload(false);
+    window.location.reload(false);
   }
 
   function recoverMessageState(index) {
@@ -113,7 +115,7 @@ function SheraAI() {
           // Get the first message in the chat
           for (const messageId in chatData) {
             const chatMessage = chatData[1].message;
-            messageArray.push(chatMessage);
+            messageArray.unshift(chatMessage);
             console.log("chat messages are " + chatMessage);
             break;
           }
@@ -291,19 +293,26 @@ function SheraAI() {
           !openMenu ? "fetchmessages" : "fetchmessages fetchmessagesForMob"
         }
       >
-        {fetchmessages.map((user, key) => (
-          <code className="user" key={key}>
-            <span>
-              {" "}
-              <img src={messageIcon} height={20} width={20} />{" "}
-            </span>{" "}
-            <p onClick={() => recoverMessageState(key)}> {user} </p>
-          </code>
-        ))}
+        {fetchmessages.map((user, key) =>
+          address ? (
+            <code className="user" key={key}>
+              <span>
+                {" "}
+                <img src={messageIcon} height={20} width={20} />{" "}
+              </span>{" "}
+              <p onClick={() => recoverMessageState(key)}> {user} </p>
+            </code>
+          ) : (
+            console.log("wallet is not cannected")
+          )
+        )}
       </code>
 
       {!address ? (
-        <ConnectWallet />
+
+        <>
+          <ConnectWallet />
+        </>
       ) : (
         <>
           <div className="App">
@@ -317,7 +326,7 @@ function SheraAI() {
                     scrollBehavior="smooth"
                     typingIndicator={
                       isTyping ? (
-                        <TypingIndicator content="Shera AI Bot is typing" />
+                        <TypingIndicator content="Achievemor Bot is typing" />
                       ) : null
                     }
                   >
@@ -329,7 +338,7 @@ function SheraAI() {
                           <Message key={i} model={message}>
                             {" "}
                             <Avatar
-                              src="https://sheratokens.com/wp-content/uploads/2022/04/shera-logo.svg"
+                              src={ACHIEVEMORLOGO}
                               name="Joe"
                             />
                           </Message>
