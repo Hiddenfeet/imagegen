@@ -16,8 +16,6 @@ import messageIcon from "../assets/message-icon.png";
 
 import plus from "../assets/plus.png";
 
-import ACHIEVEMORLOGO from "../assets/ACHIEVEMORChat.jpeg";
-
 import { ConnectWallet, useAddress } from "@thirdweb-dev/react";
 
 // Import the Firebase SDK
@@ -42,7 +40,7 @@ function SheraAI() {
 
   const [messages, setMessages] = useState([
     {
-      message: "Hello, I'm Achievemor Bot! Ask me anything!",
+      message: "Hello, I'm Shera AI Bot! Ask me anything!",
       sentTime: "just now",
       sender: "ChatGPT",
       avatar: "https://avatars.dicebear.com/api/avataaars/chatgpt.svg",
@@ -326,7 +324,7 @@ function SheraAI() {
                     scrollBehavior="smooth"
                     typingIndicator={
                       isTyping ? (
-                        <TypingIndicator content="Achievemor Bot is typing" />
+                        <TypingIndicator content="Shera AI Bot is typing" />
                       ) : null
                     }
                   >
@@ -338,7 +336,7 @@ function SheraAI() {
                           <Message key={i} model={message}>
                             {" "}
                             <Avatar
-                              src={ACHIEVEMORLOGO}
+                              src="https://sheratokens.com/wp-content/uploads/2022/04/shera-logo.svg"
                               name="Joe"
                             />
                           </Message>
