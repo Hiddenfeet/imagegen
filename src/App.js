@@ -7,7 +7,7 @@ import { Routes, Route } from "react-router-dom";
 function App() {
   return (
     <>
-      <Header />
+      
       <Routes>
         <Route path="/" element={<SheraAI />} exact />
         <Route path="/ImageGenator" element={<ImageGenator />} exact />
