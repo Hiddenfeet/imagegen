@@ -1,7 +1,7 @@
 import "./App.css";
 import SheraAI from "./pages/SheraAI.js";
 import ImageGenator from "./pages/ImageGenator.js";
-import { Header } from "./components/Header.js";
+
 import { Routes, Route } from "react-router-dom";
 
 function App() {
